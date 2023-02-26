@@ -1,0 +1,80 @@
+.iconMS {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-container-menu {
+  background: url(/assets/img/Sprites.64af8f61.svg) no-repeat -423px -88px;
+  margin-right: 10px;
+}
+
+.icon-header-menu {
+  background: url(/assets/img/Sprites.64af8f61.svg) no-repeat -843px -30px;
+  margin-right: 12px;
+}
+
+.icon-down {
+  background: url(/assets/img/Sprites.64af8f61.svg) no-repeat -80px -360px;
+  width: 14px;
+  height: 14px;
+  transform: rotate(90deg);
+  margin: 8px;
+}
+.icon-down-small {
+  background: url(/assets/img/Sprites.64af8f61.svg) no-repeat -1076px -32px;
+  width: 14px;
+  height: 14px;
+}
+
+.icon-notify {
+  background: url(/assets/img/Sprites.64af8f61.svg) no-repeat -788px -30px;
+  margin: 16px;
+}
+
+.icon-drop-list {
+  background: url(/assets/img/Sprites.64af8f61.svg) no-repeat -556px -356px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.icon-drop-list-table {
+  background: url(/assets/img/Sprites.64af8f61.svg) no-repeat -895px -355px;
+  width: 24px;
+  height: 24px;
+  color: #0075c0;
+  cursor: pointer;
+}
+
+.icon-close {
+  background: url(/assets/img/Sprites.64af8f61.svg) no-repeat -144px -144px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.icon-question {
+  background: url(/assets/img/Sprites.64af8f61.svg) no-repeat -89px -144px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.icon-search {
+  background: url(/assets/img/Sprites.64af8f61.svg) no-repeat -992px -360px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+.icon-reload {
+  background: url(/assets/img/Sprites.64af8f61.svg) no-repeat -423px -201px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.icon-warning {
+  background: url(/assets/img/Sprites.64af8f61.svg) no-repeat -592px -456px;
+  width: 48px;
+  height: 48px;
+}

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/toast.css" />
+    <link rel="stylesheet" href="./css/sidebar.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
+    <link rel="stylesheet" href="./css/icon.css" />
+    <title>Quản lý nhân viên</title>
+  </head>
+  <body>
+    <!-- modal -->
+    <div class="modal-container hide">
+      <div class="modal-wrapper">
+        <div class="btn-header df">
+          <div class="btn-question icon-question" title="Đặt câu hỏi">
+          </div>
+          <div class="btn-close icon-close" title="Đóng">
+          </div>
+        </div>
+        <div class="modal-content">
+          <!-- modal header -->
+          <div class="modal-header df">
+            <h2 class="title">Thông tin nhân viên</h2>
+            <span class="option-checkbox df">
+              <input id="clientID" type="checkbox" class="hide inputCheckboxModal" value="1" checked />
+              <label class="checkbox" for="clientID"><div class="tick">L</div></label>
+              <p class="text">Là khách hàng</p>
+            </span>
+            <span class="option-checkbox df">
+              <input id="supplierID" type="checkbox" class="hide inputCheckboxModal" value="2" />
+              <label class="checkbox" for="supplierID"><div class="tick">L</div></label>
+              <p class="text">Là nhà cung cấp</p>
+            </span>
+          </div>
+          <!-- modal body -->
+          <div class="modal-body">
+            <div class="form-row">
+              <div class="form-half">
+                <div class="form-group flex-grow4 mr6">
+                  <label for="EmployeeCode"
+                    >Mã <span class="icon-request">&nbsp*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="EmployeeCode"
+                    placeholder="NV11111"
+                    required
+                  />
+                </div>
+                <div class="form-group flex-grow6">
+                  <label for="EmployeeName"
+                    >Tên <span class="icon-request">&nbsp*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="EmployeeName"
+                    placeholder="Nguyễn ĐÌnh Thắng"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-half">
+                <div class="form-group flex-grow4">
+                  <label for="DateOfBirth">Ngày sinh</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="DateOfBirth"                   
+                  />
+                </div>
+                <div class="form-group flex-grow6 ml24" id="Gender">
+                  <label >Giới tính</label>
+                  <div class="box-select form-control df">
+                    <div class="option df" >
+                      <input type="radio" id="1" name="radio-group" checked />
+                      <label class="radio" value="1"  for="1">Nam</label>
+                    </div>
+                    <div class="option df" >
+                      <input type="radio" id="2" name="radio-group" />
+                      <label class="radio" value="2" for="2">Nữ</label>
+                    </div>
+                    <div class="option df" >
+                      <input type="radio" id="0" name="radio-group" />
+                      <label class="radio" value="0" for="0">Khác</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- row2 -->
+            <div class="form-row">
+              <div class="form-half">
+                <div class="form-group flex-grow1">
+                  <label for="DepartmentID"
+                    >Đơn vị <span class="icon-request">&nbsp*</span></label
+                  >
+                  <div
+                    class="form-control select-custom"
+                    id="select-department"
+                    department=""
+                  >
+                    <input
+                      type="text"
+                      class="input-select-department"
+                      id="DepartmentID"
+                      placeholder="Phòng kế toán"
+                      required
+                    />
+                    <div class="icon-drop-list btn-drop">
+                        
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-half">
+                <div class="form-group flex-grow6 mr6">
+                  <label for="IdentityNumber">Số CMND</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="IdentityNumber"
+                    placeholder="0302010032032"
+                  />
+                </div>
+                <div class="form-group flex-grow4">
+                  <label for="IdentityIssuedDate">Ngày cấp</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="IdentityIssuedDate"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- row3 -->
+            <div class="form-row">
+              <div class="form-half">
+                <div class="form-group flex-grow1">
+                  <label for="PositionName">Chức danh</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="PositionName"
+                    placeholder="Bảo vệ"
+                  />
+                </div>
+              </div>
+              <div class="form-half">
+                <div class="form-group flex-grow1">
+                  <label for="IdentityIssuedPlace">Nơi cấp</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="IdentityIssuedPlace"
+                    placeholder="Hải Dương"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- row4 -->
+            <div class="form-row">
+              <div class="form-group flex-grow1">
+                <label for="Address">Địa chỉ</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Address"
+                  placeholder="81 Trần Đại Nghĩa"
+                />
+              </div>
+            </div>
+            <!-- row5 -->
+            <div class="form-row row-special">
+              <div class="form-group flex-grow1 mr6">
+                <label for="MobilePhone">ĐT di động</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="MobilePhone"
+                  placeholder="0987654321"
+                />
+              </div>
+              <div class="form-group flex-grow1 mr6">
+                <label for="LandlinePhone">ĐT cố định</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="LandlinePhone"
+                  placeholder="0987654321"
+                />
+              </div>
+              <div class="form-group flex-grow1">
+                <label for="Email">Email</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Email"
+                  placeholder="nthang621@gmail.com"
+                />
+              </div>
+            </div>
+            <!-- row6 -->
+            <div class="form-row row-special">
+              <div class="form-group flex-grow1 mr6">
+                <label for="BankAccount">Tài khoản ngân hàng</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="BankAccount"
+                  placeholder="123892382834"
+                />
+              </div>
+              <div class="form-group flex-grow1 mr6">
+                <label for="BankName">Tên ngân hàng</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="BankName"
+                  placeholder="Ngân hàng Viettin"
+                />
+              </div>
+              <div class="form-group flex-grow1">
+                <label for="BankBranch">Chi nhánh ngân hàng</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="BankBranch"
+                  placeholder="Chi nhánh 8"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- modal footer -->
+          <div class="modal-footer">
+            <div class="action-button df">
+              <div class="btn-cancel btn-normal">Huỷ</div>
+              <div class="btn-actions df">
+                <div class="btn-preview btn-normal">Cất</div>
+                <div class="btn btn-save" id="btn-save">Cất và thêm</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- drop list more action -->
+    <div class="drop-list-more hide">
+      <div class="wrapper">
+        <div class="btn-clone option-action">Nhân bản</div>
+        <div class="btn-delete option-action">Xoá</div>
+      </div>
+      </div>
+    <!-- Toast -->
+    <div id="toast"></div>
+
+    <!-- Message -->
+    <div class="message-container hide">
+          <div class="message-box">
+            <div class="message-content df">
+              <div class="icon-warning"></div>
+              <div class="content">Bạn có thực sự muốn xóa không, bản ghi này sẽ bị mất vĩnh viễn?</div>
+            </div>
+            <div class="message-action">
+              <div class="btn-no btn-normal">Không</div>
+              <div class=" btn btn-accept">Có</div>
+            </div>
+          </div>
+    </div>
+
+  <!-- loading cover body -->
+    <div class="loading-container loading-body hide">
+        <div class="loading-icon">
+            <!-- <img src="../assets/loading.svg" alt="loading...."> -->
+            <div class="loadingio-spinner-spin-qqol6yj386"><div class="ldio-a61ixwvtwfk">
+            <div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div>
+            </div></div>
+        </div>
+    </div>
+
+
+    <!-- container -->
+    <div class="container">
+      <!-- sidebar -->
+      <div class="sidebar">
+        <!-- Logo -->
+        <div class="logo-container">
+          <div class="iconMS icon-container-menu">
+          </div>
+          <a href="#">
+            <div class="logo">
+              <img
+                src="../assets/img/Logo_Module_TiengViet_White.66947422.svg"
+                alt="img"
+              />
+            </div>
+          </a>
+        </div>
+        <!-- list menu -->
+        <div class="list-menu" id="list-menu">
+
+        </div>
+        <!--End list menu -->
+      </div>
+      <!-- main -->
+      <div class="main">
+        <div class="navbar">
+          <!-- main left -->
+          <div class="navbar-select">
+            <div class="iconMS icon-header-menu">
+
+            </div>
+            <div class="select-company">
+              <div class="name-company">
+                Công ty TNHH sản xuất - Thương mại - Dịch vụ Qui Phúc
+              </div>
+              <div class="icon-down">
+                
+              </div>
+            </div>
+          </div>
+          <!-- main right box user -->
+
+          <div class="navbar-user">
+            <div class="icon-notify iconMS">
+              
+            </div>
+            <div class="user">
+              <div class="icon-user">
+                <img src="../assets/img/avatar-default.png" alt="avatar" />
+              </div>
+              <div class="name-user">Nguyễn Văn A</div>
+            </div>
+            <div class="icon-down-small">
+            </div>
+          </div>
+        </div>
+
+        <!-- main content -->
+        <div class="main-content">
+          <div class="main-content--header">
+            <div class="name-table">Nhân viên</div>
+            <div class="btn btn-add">Thêm mới nhân viên</div>
+          </div>
+          <!--  -->
+          <div class="table-container">
+            <div class="table-outer">
+
+              
+              <!-- header table -->
+              <div class="input-filter">
+                <div class="btn-deleteMultiple unPointer">
+                    Xoá hàng loạt
+                </div>
+                <div class="box-search df">
+                  <div class="search">
+                    <input
+                      class="input-search border"
+                      type="text"
+                      placeholder="Tìm theo mã, tên nhân viên"
+                    />
+                    <div class="icon-search">
+                    </div>
+                  </div>
+                  <div class="btn-reload icon-reload"></div>
+
+                </div>
+              </div>
+              <!--body table -->
+              <div class="table-wrapper">
+              <!-- loading table -->
+              <div class="loading-container loading-table hide">
+                  <div class="loading-icon">
+                      <!-- <img src="../assets/loading.svg" alt="loading...."> -->
+                      <div class="loadingio-spinner-spin-qqol6yj386"><div class="ldio-a61ixwvtwfk">
+                      <div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div>
+                      </div></div>
+                  </div>
+              </div>
+                <table>
+                  <thead>
+                    <th propsValue="employeeID">
+                      <input id="checkboxID" type="checkbox" class="hide inputCheckboxModal " />
+                      <label class="checkbox" for="checkboxID"><div class="tick">L</div></label>
+                    </th>
+                    <th propsValue="employeeCode">Mã nhân viên</th>
+                    <th propsValue="employeeName">Tên nhân viên</th>
+                    <th propsValue="gender">Giới tính</th>
+                    <th propsValue="dateOfBirth">Ngày sinh</th>
+                    <th propsValue="identityNumber">Số CMND</th>
+                    <th propsValue="positionName">Chức Danh</th>
+                    <th propsValue="departmentID">Tên đơn vị</th>
+                    <th propsValue="bankAccount">Số tài khoản</th>
+                    <th propsValue="bankName">Tên ngân hàng</th>
+                    <th propsValue="bankBranch">Chi nhánh TK ngân hàng</th>
+                    <th propsValue="action">Chức năng</th>
+                  </thead>
+                  <tbody id="body_table"></tbody>
+                </table>
+              </div>
+              <!-- footer table -->
+              <div class="table-footer">
+                <div class="total">
+                  Tổng số:
+                  <p class="totalCount">1023</p>
+                  bản ghi
+                </div>
+                <div class="pages-container">
+                  <div class="count border" id="select-pageSize">
+                    <p>20 bản ghi trên 1 trang</p>
+                    <div class="icon-drop-list btn-drop">
+                      <!-- <i class="fa-solid fa-caret-down"></i> -->
+                    </div>
+                    </div>
+                    <div class="list-page">
+                      <p class="btn-step btn-prev unPointer">Trước</p>
+                      <div class="page-number">
+                        <!-- <div class="item selectedPage">1</div>
+                        <div class="item">2</div>
+                        <div class="item">...</div>
+                        <div class="item">56</div> -->
+                    
+                      </div>
+                      <p class="btn-step btn-next" >Sau</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/jquery-3.6.3.min.js"></script>
+    <script type="module" src="./js/data.js"></script>
+    <script type="module" src="./js/utils.js"></script>
+    <script type="module" src="./js/services.js"></script>
+    <script type="module" src="./js/Toast.js"></script>
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

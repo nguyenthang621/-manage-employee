@@ -1,0 +1,141 @@
+:root {
+  --slide-bar-bg: #393a3d;
+  --color-slide-bar: #ffffff;
+  --color-bg-main: #eceef1;
+  --item-hover-color: rgba(255, 255, 255, 0.2);
+  --height-navbar: 48px;
+  --color-inner-input: rgba(0, 0, 0, 0.4);
+
+  --color-btn: #019160;
+  --color-btn-hover: #2fbe8e;
+  --color-btn-active: #01b075;
+  --color-checked: #2ca01c;
+  --color-hover-select: #2ca01c;
+
+  --color-bg-table: #e5e8ec;
+  --color-border: #babec5;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Regular;
+  position: relative;
+}
+
+/* tạo font-family */
+@font-face {
+  font-family: notosansBold;
+  src: url(../../assets/fonts/notosans-bold.3ede5aff.woff2);
+}
+@font-face {
+  font-family: Italic;
+  src: url(../../assets/fonts/notosans-italic.1c1aaac9.woff2);
+}
+@font-face {
+  font-family: Regular;
+  src: url(../../assets/fonts/notosans-regular.2cb88a13.woff2);
+}
+@font-face {
+  font-family: Semibold;
+  src: url(../../assets/fonts/notosans-semibold.df3e6dc4.woff2);
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #ccc;
+  display: flex;
+}
+
+.container .sidebar {
+  min-width: 178px;
+  background-color: var(--slide-bar-bg);
+  color: var(--color-slide-bar);
+}
+.container .main {
+  width: calc(100% - 178px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-main);
+}
+.container .main .navbar {
+  height: var(--height-navbar);
+  background-color: #ffffff;
+}
+.container .main .main-content {
+  height: calc(100% - var(--height-navbar));
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btn-normal {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.btn-normal:hover {
+  background-color: #d2d3d6;
+}
+.btn-normal:active {
+  background-color: #bbbcbc;
+}
+
+.hide {
+  display: none;
+}
+
+.df {
+  display: flex;
+  align-items: center;
+}
+
+.dfc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mr6 {
+  margin-right: 6px;
+}
+
+.mr8 {
+  margin-right: 8px;
+}
+.ml8 {
+  margin-left: 8px;
+}
+.ml24 {
+  margin-left: 24px;
+}
+.mr24 {
+  margin-right: 24px;
+}
+
+.flex-grow1 {
+  flex-grow: 1;
+}
+.flex-grow2 {
+  flex-grow: 2;
+}
+.flex-grow3 {
+  flex-grow: 3;
+}
+.flex-grow4 {
+  flex-grow: 4;
+}
+.flex-grow5 {
+  flex-grow: 5;
+}
+.flex-grow6 {
+  flex-grow: 6;
+}
